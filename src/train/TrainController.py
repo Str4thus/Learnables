@@ -52,7 +52,8 @@ class TrainController(ViewController):
         else:
             category = self.category_manager.retrieve_category_by_name(category_string)
             self.current_learnable = self._select_learnable(self.learnable_manager.retrieve_learnables_by_category(category))
-
+        
+        self.is_showing_question = True
         self._update_displayed_text()
 
     def _select_learnable(self, learnables: List[Learnable]) -> Learnable:
